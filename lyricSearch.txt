@@ -38,3 +38,26 @@ ul.songs li {
   transform: scale(1.3);
   margin 15px
 }
+______________________________________
+JS API: https://api.lyrics.ovh/v1 
+
+Get all index elements & save the apiURL
+
+// FUNCTION searchSongs will take a term as a parameter
+it will be an async function so we can use async await to fetch the data
+apiURL/suggest/ ...
+    call showData function and pass in the data that we get
+
+// FUNCTION SHOW SONG AND ARTIST DOM / TIP UPDATE UI ..
+function showDatA(data) {
+
+}
+
+we have to add a submit event to the form and get the searchTerm
+
+if we don't have a search term => alert 'Please type in a search term'
+
+else we will call the function searchSongs and we will pass in the searchTerm 
+
+
+
