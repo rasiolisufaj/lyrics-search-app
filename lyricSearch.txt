@@ -50,8 +50,39 @@ apiURL/suggest/ ...
 
 // FUNCTION SHOW SONG AND ARTIST DOM / TIP UPDATE UI ..
 function showDatA(data) {
-
+  we will directly set the resutlEl.innerHTML = `
+  <ul class="songs">
+      we will map through array data and for each song that we get from the result we have to create a 
+          <li>
+      <span><strong> artist name </strong> - song title </span>
+      <button class="btn" data-artist="artist name" data-songtitle="song title"> Get Lyrics </button>
+    </ul>
+   WE HAVE TO .join('') each item.
+  `
+  if there is a data.preview or a data.next {
+    update moreEl.innerHTML =`
+      ${data.preview} ? '<button class="btn">Prev</button>' : ''
+      ${data.next} ? '<button class="btn">Next</button>' : ''
+    `
+    also te button will contain an onclick event
+    when clicked => it will call the getMoreSongs function which will take a url as an argument
+    that url is from data.preview or data.next
+    else moreEl.innerHTML = ''
+  }
 }
+
+// FUNCTION getMoreSongs(url) / Get prev and next songs
+  it will be an async function so we can fetch the url that is passed in
+
+  const res = await fetch('https://cors-anywhere.herokuapp.com/${url}')
+
+  from the data we get, we have to UPDATE UI
+
+
+onclick => inline event Listener
+
+
+
 
 we have to add a submit event to the form and get the searchTerm
 
@@ -61,3 +92,6 @@ else we will call the function searchSongs and we will pass in the searchTerm
 
 
 
+CORS ERROR : 
+
+res.header("Access-Control-Allow-Origin", "${url}")
